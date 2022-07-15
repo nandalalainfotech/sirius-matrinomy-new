@@ -15,7 +15,7 @@ export default class App {
     this.app = express();
     this.middlewares();
     this.app.get('/', (req, res) => {
-      res.sendFile('index.html', { root: `${__dirname}/public/dist/omega` });
+      res.sendFile('index.html', { root: `${__dirname}/public/dist/sirius` });
     });
     // this.routes([new UserRoute(), new LookupRoute()]);
   }
@@ -45,7 +45,7 @@ export default class App {
     });
     this.app.use(express.json({ limit: '100mb' }));
     this.app.use(express.urlencoded({ extended: true }));
-    this.app.use(express.static(`${__dirname}/public/dist/omega`));
+    this.app.use(express.static(`${__dirname}/public/dist/sirius`));
     this.app.on('uncaughtException', (err) => {
       console.error('There was an uncaught error', err);
     });
