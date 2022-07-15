@@ -54,7 +54,10 @@ const app = express();
 
 // const express = require('express'); nor needed
 app.use(express.json());
-
+app.get('/', (req, res) => {
+    res.sendFile('index.html', { root: `${__dirname}/public/dist/sirius` });
+  });
+  app.use(express.static(`${__dirname}/public/dist/sirius`));
 // not needed
 app.get('/', (req, res) => {
     res.send('Backend welcomes you');
