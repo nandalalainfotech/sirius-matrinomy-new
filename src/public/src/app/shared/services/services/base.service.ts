@@ -35,7 +35,7 @@ export class BaseService {
         public httpClient: HttpClient,
         private calloutService: CalloutService,
         public dataSharedService: DataSharedService,
-        public baseService: BaseService
+        // public baseService: BaseService
     ) {}
 
     ngOnInit() {
