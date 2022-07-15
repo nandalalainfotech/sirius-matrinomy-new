@@ -2,7 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -20,14 +20,13 @@
       "es2018",
       "dom"
     ],
-   
-    
   },
-  
   "angularCompilerOptions": {
     "strictInjectionParameters": false,
     "strictInputAccessModifiers": true,
     "strictTemplates": true,
-    "types" : ["node"]
+    "types": [
+      "node"
+    ]
   }
 }
