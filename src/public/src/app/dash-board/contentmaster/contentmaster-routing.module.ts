@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { Component } from 'ag-grid-community';
-import { path } from 'd3';
+import { RouterModule, Routes } from '@angular/router';
 import { AudioComponent } from './audio/audio.component';
 import { ContentmasterComponent } from './contentmaster.component';
 import { PhotoComponent } from './photo/photo.component';
