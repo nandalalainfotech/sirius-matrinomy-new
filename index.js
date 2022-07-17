@@ -9,37 +9,37 @@ import hbs from "nodemailer-express-handlebars";
 import path from "path";
 import swaggerjsdoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
-import audiocontroller from "./controllers/audiocontroller.js";
-import categorydetailcontroller from "./controllers/categorydetailscontroller.js";
-import citycontroller from "./controllers/citycontroller.js";
-import companydetailscontroller from "./controllers/companydetailscontroller.js";
-import contentmastercontroller from "./controllers/contentmastercontroller.js";
-import countrycontroller from "./controllers/countrycontroller.js";
-import languagecontroller from "./controllers/languagecontroller.js";
-import logincontroller from "./controllers/logincontroller.js";
-import paymentcontroller from "./controllers/paymentcontroller.js";
-import personcontroller from "./controllers/personcontroller.js";
-import photocontroller from "./controllers/photocontroller.js";
-import regionaldetailscontroller from "./controllers/regionaldetailscontroller.js";
-import religioncontroller from "./controllers/religioncontroller.js";
-import reviewcontroller from "./controllers/reviewcontroller.js";
-import rolecontroller from "./controllers/rolecontroller.js";
-import statecontroller from "./controllers/statecontroller.js";
-import subcatclassificationcontroller from "./controllers/subcatclassificationcontroller.js";
-import subcategorycontroller from "./controllers/subcategorycontroller.js";
-import subscribercontentauthcontroller from "./controllers/subscribercontentauthcontroller.js";
-import subscribercontentcontroller from "./controllers/subscribercontentcontroller.js";
-import subscriberdetailscontroller from "./controllers/subscriberdetailscontroller.js";
-import subscriberpersonalinfocontroller from "./controllers/subscriberpersonalinfocontroller.js";
-import subscriberprofessionalinfocontroller from "./controllers/subscriberprofessionalinfocontroller.js";
-import subscriptionmastercontroller from "./controllers/subscriptionmastercontroller.js";
-import usersamplecontroller from "./controllers/usersamplecontroller.js";
-import userscontroller from "./controllers/userscontroller.js";
-import videocontroller from "./controllers/videocontroller.js";
-import verifyToken from "./middleware/auth.js";
-import db from "./models/main.js";
+import audiocontroller from "./src/controllers/audiocontroller.js";
+import categorydetailcontroller from "./src/controllers/categorydetailscontroller.js";
+import citycontroller from "./src/controllers/citycontroller.js";
+import companydetailscontroller from "./src/controllers/companydetailscontroller.js";
+import contentmastercontroller from "./src/controllers/contentmastercontroller.js";
+import countrycontroller from "./src/controllers/countrycontroller.js";
+import languagecontroller from "./src/controllers/languagecontroller.js";
+import logincontroller from "./src/controllers/logincontroller.js";
+import paymentcontroller from "./src/controllers/paymentcontroller.js";
+import personcontroller from "./src/controllers/personcontroller.js";
+import photocontroller from "./src/controllers/photocontroller.js";
+import regionaldetailscontroller from "./src/controllers/regionaldetailscontroller.js";
+import religioncontroller from "./src/controllers/religioncontroller.js";
+import reviewcontroller from "./src/controllers/reviewcontroller.js";
+import rolecontroller from "./src/controllers/rolecontroller.js";
+import statecontroller from "./src/controllers/statecontroller.js";
+import subcatclassificationcontroller from "./src/controllers/subcatclassificationcontroller.js";
+import subcategorycontroller from "./src/controllers/subcategorycontroller.js";
+import subscribercontentauthcontroller from "./src/controllers/subscribercontentauthcontroller.js";
+import subscribercontentcontroller from "./src/controllers/subscribercontentcontroller.js";
+import subscriberdetailscontroller from "./src/controllers/subscriberdetailscontroller.js";
+import subscriberpersonalinfocontroller from "./src/controllers/subscriberpersonalinfocontroller.js";
+import subscriberprofessionalinfocontroller from "./src/controllers/subscriberprofessionalinfocontroller.js";
+import subscriptionmastercontroller from "./src/controllers/subscriptionmastercontroller.js";
+import usersamplecontroller from "./src/controllers/usersamplecontroller.js";
+import userscontroller from "./src/controllers/userscontroller.js";
+import videocontroller from "./src/controllers/videocontroller.js";
+import verifyToken from "./src/middleware/auth.js";
+import db from "./src/models/main.js";
 
-import rolebaseauth from "./middleware/roleauth.js";
+import rolebaseauth from "./src/middleware/roleauth.js";
 // import upload from "../sirius-api/src/middleware/upload.js";
 // import videoUpload from "../sirius-api/src/middleware/videoupload.js";
 // import audio from "../sirius-api/src/middleware/audio.js";
@@ -51,26 +51,10 @@ import rolebaseauth from "./middleware/roleauth.js";
 
 
 const app = express();
-// Run the app by serving the static files
-// in the dist directory
-app.use(express.static(__dirname + '/dist/sirius'));
-
-// For all GET requests, send back index.html
-// so that PathLocationStrategy can be used
-// app.get('/*', function(req, res) {
-//   res.sendFile(path.join(__dirname + '/dist/index.html'));
-// });
-// app.get('/*', function(req,res) {
-
-//     res.sendFile(path.join(__dirname+'/dist/sirius/index.html'));
-//   });
 
 // const express = require('express'); nor needed
 app.use(express.json());
-app.get('/', (req, res) => {
-    res.sendFile('index.html', { root: `${__dirname}/public/dist/sirius` });
-  });
-  app.use(express.static(`${__dirname}/public/dist/sirius`));
+
 // not needed
 app.get('/', (req, res) => {
     res.send('Backend welcomes you');
