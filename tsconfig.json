@@ -6,7 +6,7 @@
       "lib": ["es6", "es7", "es2017", "es2019", "dom"],
       "sourceMap": true,
       "allowJs": false,
-      "outDir": "./dist",
+      "outDir": "./src/public/dist/sirius",
       "baseUrl": "./src",
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true,
