@@ -16,7 +16,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild": "cd src/public && npm install && npm run build"
   },
- 
   "keywords": [],
   "author": "",
   "license": "ISC",
