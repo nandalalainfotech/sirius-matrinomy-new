@@ -56,7 +56,8 @@ app.use(express.static('public'));
 
 app.get('*', (req, res) => {
     // res.sendFile(path.join(__dirname, 'public/src/index.html'));
-    res.sendFile(path.resolve(path.dirname('public/src/index.html')));
+    // 'index.html', { root: `${__dirname}/public/dist/omega`
+    res.sendFile(path.resolve(path.dirname('./src/public/dist/sirius')));
 })
 
 // const express = require('express'); nor needed
