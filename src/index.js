@@ -51,7 +51,7 @@ const app = express();
 if (!process.env.NODE_ENV) process.env.NODE_ENV = 'dev';
 // dotenv.config({ path: `${__dirname}/../env/.env.${process.env.NODE_ENV.trim()}` });
 
-this.middlewares();
+// this.middlewares();
 app.get('/', (req, res) => {
     //   res.sendFile('index.html', { root: `${__dirname}/public/dist/omega` });
     res.sendFile(path.resolve(path.dirname('./src/public/dist/sirius')));
