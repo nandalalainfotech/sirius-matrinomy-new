@@ -45,24 +45,26 @@ import rolebaseauth from "./middleware/roleauth.js";
 // import audio from "../sirius-api/src/middleware/audio.js";
 
 
-// if (!process.env.NODE_ENV) process.env.NODE_ENV = 'dev';
-// dotenv.config({ path: `${__dirname}/../env/.env.${process.env.NODE_ENV.trim()}` });
-// this.app = express();
-// this.middlewares();
-// this.app.get('/', (req, res) => {
-//     res.sendFile('index.html', { root: `${__dirname}/public/dist/omega` });
-// });
-if (process.env.NODE_ENV === "production") {
-    app.use("/", express.static(path.join(__dirname, "./src/public/dist/sirius")));
-    app.get("#", (req, res) => {
-        res.sendFile(path.resolve(__dirname, "./src/public/dist/sirius", "index.html"));
-    });
-}
 
 
 const app = express();
+if (!process.env.NODE_ENV) process.env.NODE_ENV = 'dev';
+// dotenv.config({ path: `${__dirname}/../env/.env.${process.env.NODE_ENV.trim()}` });
+
+// this.middlewares();
+app.get('/', (req, res) => {
+    //   res.sendFile('index.html', { root: `${__dirname}/public/dist/omega` });
+    res.sendFile(path.resolve(path.dirname('./src/public/dist/sirius')));
+});
+
 
 app.use(express.static(path.resolve(path.dirname('./src/public/dist/sirius'))));
+
+app.use(express.json({ limit: '100mb' }));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.resolve(path.dirname('./src/public/dist/sirius'))));
+
+
 
 
 app.get('*', (req, res) => {
