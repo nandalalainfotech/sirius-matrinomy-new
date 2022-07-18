@@ -54,9 +54,9 @@ const app = express();
 
 app.use(express.static('public'));
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/src/index.html'));
-})
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'public/src/index.html'));
+// })
 
 // const express = require('express'); nor needed
 app.use(express.json());
@@ -64,6 +64,7 @@ app.use(express.json());
 // not needed
 app.get('/', (req, res) => {
     res.send('Backend welcomes you');
+    res.sendFile(path.join(__dirname, 'public/src/index.html'));
 });
 
 // needed
