@@ -38,7 +38,7 @@ import userscontroller from "./controllers/userscontroller.js";
 import videocontroller from "./controllers/videocontroller.js";
 import verifyToken from "./middleware/auth.js";
 import db from "./models/main.js";
-
+// import path from 'path';
 import rolebaseauth from "./middleware/roleauth.js";
 // import upload from "../sirius-api/src/middleware/upload.js";
 // import videoUpload from "../sirius-api/src/middleware/videoupload.js";
@@ -54,9 +54,10 @@ const app = express();
 
 app.use(express.static('public'));
 
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public/src/index.html'));
-// })
+app.get('*', (req, res) => {
+    // res.sendFile(path.join(__dirname, 'public/src/index.html'));
+    res.sendFile(path.resolve(path.dirname('public/src/index.html')));
+})
 
 // const express = require('express'); nor needed
 app.use(express.json());
@@ -64,7 +65,8 @@ app.use(express.json());
 // not needed
 app.get('/', (req, res) => {
     res.send('Backend welcomes you');
-    res.sendFile(path.join(__dirname, 'public/src/index.html'));
+  
+    // res.sendFile(path.join(__dirname, 'public/src/index.html'));
 });
 
 // needed
