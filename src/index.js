@@ -66,7 +66,7 @@ app.use(express.json());
 // not needed
 app.get('/', (req, res) => {
     res.send('Backend welcomes you');
-  
+
     // res.sendFile(path.join(__dirname, 'public/src/index.html'));
 });
 
@@ -721,8 +721,14 @@ db.mongoose
         // this.app = express();
         // this.middlewares();
         app.get('/', (req, res) => {
-            res.sendFile('index.html', { root: `${__dirname}/public/dist/sirius` });
+            // res.sendFile('index.html', { root: `${__dirname}/public/dist/sirius` });
+            res.sendFile('index.html', { root: path.resolve(path.dirname('./src/public/dist/sirius')) });
         });
+
+        app.get('*', (req, res) => {
+            res.sendFile(path.resolve(path.dirname('./src/public/dist/sirius')));
+        })
+
         initial();
         app.listen(PORT, () => {
             console.log(`Server is running on port ${PORT}.`);
