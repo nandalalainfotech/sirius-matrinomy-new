@@ -109,6 +109,8 @@ const Payment001mb = db.payment001mb;
 app.use(bodyParser.urlencoded({ extended: true }));
 
 function initial() {
+
+
     Login001mb.estimatedDocumentCount((err, count) => {
         if (!err && count === 0) {
             Login001mb.insertMany([{
@@ -710,6 +712,13 @@ db.mongoose
     .then(() => {
 
         console.log(`Successfully connect to MongoDB .`);
+        if (!process.env.NODE_ENV) process.env.NODE_ENV = 'dev';
+        // dotenv.config({ path: `${__dirname}/../env/.env.${process.env.NODE_ENV.trim()}` });
+        // this.app = express();
+        // this.middlewares();
+        app.get('/', (req, res) => {
+            res.sendFile('index.html', { root: `${__dirname}/public/dist/sirius` });
+        });
         initial();
         app.listen(PORT, () => {
             console.log(`Server is running on port ${PORT}.`);
