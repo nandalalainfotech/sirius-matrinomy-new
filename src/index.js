@@ -52,11 +52,9 @@ import rolebaseauth from "./middleware/roleauth.js";
 
 const app = express();
 
-app.use(express.static('public'));
+app.use(express.static(path.resolve(path.dirname('./src/public/dist/sirius'))));
 
 app.get('*', (req, res) => {
-    // res.sendFile(path.join(__dirname, 'public/src/index.html'));
-    // 'index.html', { root: `${__dirname}/public/dist/omega`
     res.sendFile(path.resolve(path.dirname('./src/public/dist/sirius')));
 })
 
@@ -721,7 +719,6 @@ db.mongoose
         // this.app = express();
         // this.middlewares();
         app.get('/', (req, res) => {
-            // res.sendFile('index.html', { root: `${__dirname}/public/dist/sirius` });
             res.sendFile('index.html', { root: path.resolve(path.dirname('./src/public/dist/sirius')) });
         });
 
