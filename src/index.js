@@ -49,13 +49,13 @@ import rolebaseauth from "./middleware/roleauth.js";
 
 const app = express();
 
-if (!process.env.NODE_ENV) process.env.NODE_ENV = 'dev';
-// dotenv.config({ path: `${__dirname}/../env/.env.${process.env.NODE_ENV.trim()}` });
+// if (!process.env.NODE_ENV) process.env.NODE_ENV = 'dev';
+// // dotenv.config({ path: `${__dirname}/../env/.env.${process.env.NODE_ENV.trim()}` });
 
 
-app.get('/', (req, res) => {
-    res.sendFile('index.html', { root: `${__dirname}/public/dist/sirius` });
-});
+// app.get('/', (req, res) => {
+//     res.sendFile('index.html', { root: `${__dirname}/public/dist/sirius` });
+// });
 
 // if (!process.env.NODE_ENV) process.env.NODE_ENV = 'dev';
 // // dotenv.config({ path: `${__dirname}/../env/.env.${process.env.NODE_ENV.trim()}` });
@@ -65,20 +65,21 @@ app.get('/', (req, res) => {
 //     //   res.sendFile('index.html', { root: `${__dirname}/public/dist/omega` });
 //     res.sendFile(path.resolve(path.dirname('./src/public/dist/sirius')));
 // });
-
-
-app.use(express.static(path.resolve(path.dirname('./src/public/dist/sirius'))));
+app.use(express.static("./dist/sirius"));
+app.get("/*", function (req, res) {
+    res.sendFile("index.html", { root: "dist/sirius" });
+});
+// app.use(express.static(path.resolve(path.dirname('./src/public/dist/sirius'))));
 
 app.use(express.json({ limit: '100mb' }));
 app.use(express.urlencoded({ extended: true }));
-// app.use(express.static(`${__dirname}/public/dist/omega`));
+// app.use(express.static(`${__dirname}/public/dist/sirius`));
 
 
 
-
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve(path.dirname('./src/public/dist/sirius')));
-})
+// app.get('*', (req, res) => {
+//     res.sendFile(path.resolve(path.dirname('./src/public/dist/sirius')));
+// })
 
 // const express = require('express'); nor needed
 app.use(express.json());
@@ -86,8 +87,6 @@ app.use(express.json());
 // not needed
 app.get('/', (req, res) => {
     res.send('Backend welcomes you');
-
-    // res.sendFile(path.join(__dirname, 'public/src/index.html'));
 });
 
 // needed
