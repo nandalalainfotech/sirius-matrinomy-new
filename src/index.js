@@ -49,7 +49,7 @@ import rolebaseauth from "../src/middleware/roleauth.js";
 import upload from "../src/middleware/upload.js";
 import videoUpload from "../src/middleware/videoupload.js";
 import audio from "../src/middleware/audio.js";
-const src = express();
+const app = express();
 
 if (!process.env.NODE_ENV) process.env.NODE_ENV = 'dev';
 // dotenv.config({ path: `${__dirname}/../env/.env.${process.env.NODE_ENV.trim()}` });
