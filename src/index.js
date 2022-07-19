@@ -3,7 +3,6 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
-// import db from "./app/models/main.js";
 import db from "../src/models/main.js";
 import countrycontroller from "../src/controllers/countrycontroller.js";
 import categorydetailcontroller from "../src/controllers/categorydetailscontroller.js";
@@ -41,11 +40,6 @@ import path from "path";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import rolebaseauth from "../src/middleware/roleauth.js";
-
-// import upload from "../../sirius-matrinomy-new/src/middleware/upload.js";
-// import videoUpload from "../../sirius-matrinomy-new/src/middleware/videoupload.js";
-// import audio from "../../sirius-matrinomy-new/src/middleware/audio.js";
-
 import upload from "../src/middleware/upload.js";
 import videoUpload from "../src/middleware/videoupload.js";
 import audio from "../src/middleware/audio.js";
