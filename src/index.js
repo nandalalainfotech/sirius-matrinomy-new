@@ -716,7 +716,7 @@ app.use("/api/videocontroller", videocontroller);
 app.use("/api/rolecontroller", rolecontroller);
 app.use("/api/subscriberdetailscontroller", subscriberdetailscontroller);
 app.use("/api/citycontroller", citycontroller);
-// app.use("/api/audiocontroller", audiocontroller);
+app.use("/api/audiocontroller", audiocontroller);
 app.use("/api/personcontroller", personcontroller);
 app.use("/api/paymentcontroller", paymentcontroller);
 app.use("/api/verifyToken", verifyToken);
