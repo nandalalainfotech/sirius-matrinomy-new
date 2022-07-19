@@ -69,11 +69,7 @@
     "yamljs": "^0.3.0",
     "@angular-builders/custom-webpack": "12.0.0-beta.0",
     "babel-loader": "8.2.5",
-    "node-pre-gyp": "0.17.0",
-
-    "@babel/register": "^7.8.3",
-    "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4"
+    "node-pre-gyp": "0.17.0"
   },
   "devDependencies": {
     "@types/body-parser": "^1.16.8",
