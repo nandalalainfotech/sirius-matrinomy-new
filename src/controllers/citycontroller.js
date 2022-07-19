@@ -1,5 +1,4 @@
 import * as countryservice from "../Services/cityservice.js";
-// import * as countryservice from "../services/cityservice.js";
 const router = express.Router();
 
 router.use(function (req, res, next) {
