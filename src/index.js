@@ -33,9 +33,6 @@ import personcontroller from "../src/controllers/personcontroller.js";
 import logincontroller from "../src/controllers/logincontroller.js";
 import swaggerUi from "swagger-ui-express";
 import swaggerjsdoc from "swagger-jsdoc";
-// import upload from "../siriusmatrimony-backend/app/middleware/upload.js";
-// import videoUpload from "../siriusmatrimony-backend/app/middleware/videoupload.js";
-// import audio from "../siriusmatrimony-backend/app/middleware/audio.js";
 import paymentcontroller from "../src/controllers/paymentcontroller.js";
 import verifyToken from "../src/middleware/auth.js";
 import nodemailer from "nodemailer";
@@ -45,12 +42,13 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import rolebaseauth from "../src/middleware/roleauth.js";
 
-import upload from "../../sirius-matrinomy-new/src/middleware/upload.js";
-import videoUpload from "../../sirius-matrinomy-new/src/middleware/videoupload.js";
-import audio from "../../sirius-matrinomy-new/src/middleware/audio.js";
+// import upload from "../../sirius-matrinomy-new/src/middleware/upload.js";
+// import videoUpload from "../../sirius-matrinomy-new/src/middleware/videoupload.js";
+// import audio from "../../sirius-matrinomy-new/src/middleware/audio.js";
 
-
-
+import upload from "../src/middleware/upload.js";
+import videoUpload from "../src/middleware/videoupload.js";
+import audio from "../src/middleware/audio.js";
 const app = express();
 
 if (!process.env.NODE_ENV) process.env.NODE_ENV = 'dev';
