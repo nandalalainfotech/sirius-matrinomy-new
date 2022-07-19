@@ -1,4 +1,5 @@
-import * as subcatclassificationservice from "../services/subcatclassificationservice.js";
+// import * as subcatclassificationservice from "../services/subcatclassificationservice.js";
+import * as subcatclassificationservice from "../Services/subcatclassificationservice.js";
 import express from 'express';
 
 const router = express.Router();

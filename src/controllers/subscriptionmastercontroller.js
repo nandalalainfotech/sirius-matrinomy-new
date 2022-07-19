@@ -1,4 +1,5 @@
-import * as subscriptionmasterservice from "../services/subscriptionmasterservice.js";
+// import * as subscriptionmasterservice from "../services/subscriptionmasterservice.js";
+import * as subscriptionmasterservice from "../Services/subscriptionmasterservice.js";
 import express from 'express';
 
 const router = express.Router();

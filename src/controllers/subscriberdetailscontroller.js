@@ -1,5 +1,5 @@
-import * as subscriberdetails from "../services/subscriberdetailsservice.js";
-
+// import * as subscriberdetails from "../services/subscriberdetailsservice.js";
+import * as subscriberdetails from "../Services/subscriberdetailsservice.js";
 import express from 'express';
 
 const router = express.Router();

@@ -1,5 +1,5 @@
-import * as reviewservice from "../services/reviewservice.js";
-
+// import * as reviewservice from "../services/reviewservice.js";
+import * as reviewservice from "../Services/reviewservice.js";
 import express from 'express';
 
 const router = express.Router();

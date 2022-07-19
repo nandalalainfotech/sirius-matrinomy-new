@@ -1,5 +1,5 @@
-import * as paymentservice from "../services/paymentservice.js";
-
+// import * as paymentservice from "../services/paymentservice.js";
+import * as paymentservice from "../Services/paymentservice.js";
 import express from 'express';
 
 const router = express.Router();

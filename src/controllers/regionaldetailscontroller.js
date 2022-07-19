@@ -1,5 +1,5 @@
-import * as regionaldetailsservice from "../services/regionaldetailsservice.js";
-
+// import * as regionaldetailsservice from "../services/regionaldetailsservice.js";
+import * as regionaldetailsservice from "../Services/regionaldetailsservice.js";
 import express from 'express';
 
 const router = express.Router();

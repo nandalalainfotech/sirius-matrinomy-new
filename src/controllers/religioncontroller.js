@@ -1,5 +1,5 @@
-import * as religionservice from "../services/religionservice.js";
-
+// import * as religionservice from "../services/religionservice.js";
+import * as religionservice from "../Services/religionservice.js";
 import express from 'express';
 
 const router = express.Router();

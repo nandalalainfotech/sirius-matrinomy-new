@@ -1,4 +1,5 @@
-import * as subscribercontentauthservice from "../services/subscribercontentauthservice.js";
+// import * as subscribercontentauthservice from "../services/subscribercontentauthservice.js";
+import * as subscribercontentauthservice from "../Services/subscribercontentauthservice.js";
 import express from 'express';
 
 const router = express.Router();

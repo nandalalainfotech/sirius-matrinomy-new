@@ -1,4 +1,5 @@
-import * as subcategoryservice from "../services/subcategoryservice.js";
+// import * as subcategoryservice from "../services/subcategoryservice.js";
+import * as subcategoryservice from "../Services/subcategoryservice.js";
 import express from 'express';
 
 const router = express.Router();

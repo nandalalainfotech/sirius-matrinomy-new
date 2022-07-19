@@ -1,5 +1,5 @@
-import * as contentmasterservice from "../services/contentmasterservice.js";
-
+import * as contentmasterservice from "../Services/contentmasterservice.js";
+// import * as contentmasterservice from "../services/contentmasterservice.js";
 import express from 'express';
 
 const router = express.Router();

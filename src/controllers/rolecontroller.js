@@ -1,4 +1,5 @@
-import * as roleservice from "../services/roleservice.js";
+// import * as roleservice from "../services/roleservice.js";
+import * as roleservice from "../Services/roleservice.js";
 import express from 'express';
 
 const router = express.Router();

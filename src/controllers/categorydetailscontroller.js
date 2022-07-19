@@ -1,6 +1,6 @@
 
-import * as categorydetailsservice from "../services/categorydetailsservice.js";
-
+import * as categorydetailsservice from "../Services/categorydetailsservice.js";
+// import * as countryservice from "../services/cityservice.js";
 import express from 'express';
 
 const router = express.Router();

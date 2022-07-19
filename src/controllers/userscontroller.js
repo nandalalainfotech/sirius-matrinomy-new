@@ -1,5 +1,5 @@
-import * as usersservice from "../services/usersservice.js";
-
+// import * as usersservice from "../services/usersservice.js";
+import * as usersservice from "../Services/usersservice.js";
 import express from 'express';
 
 const router = express.Router();

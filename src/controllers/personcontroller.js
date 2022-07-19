@@ -1,5 +1,5 @@
-import * as personservice from "../services/personservice.js";
-
+// import * as personservice from "../services/personservice.js";
+import * as personservice from "../Services/personservice.js";
 import express from 'express';
 
 const router = express.Router();
