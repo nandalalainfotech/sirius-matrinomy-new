@@ -1,5 +1,5 @@
-import * as photoservice from "../services/photoservice.js";
-
+// import * as photoservice from "../services/photoservice.js";
+import * as photoservice from "../Services/photoservice.js";
 import express from 'express';
 import upload from "../middleware/upload.js";
 const router = express.Router();

@@ -1,4 +1,5 @@
-import * as videoservice from "../services/videoservice.js";
+// import * as videoservice from "../services/videoservice.js";
+import * as videoservice from "../Services/videoservice.js";
 import videoUpload from "../middleware/videoupload.js";
 import express from 'express';
 
