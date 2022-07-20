@@ -47,7 +47,6 @@ const app = express();
 app.use(cors());
 dotenv.config();
 
-
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Content-Type, Accept,X-Requested-With");
@@ -55,7 +54,6 @@ app.use(function (req, res, next) {
     next();
 });
 app.use(bodyParser.json());
-
 
 const Country001mb = db.country001mb;
 const Categorydetails001mb = db.categorydetails001mb;
@@ -88,7 +86,6 @@ const Payment001mb = db.payment001mb;
 app.use(bodyParser.urlencoded({ extended: true }));
 
 function initial() {
-
 
     Login001mb.estimatedDocumentCount((err, count) => {
         if (!err && count === 0) {
