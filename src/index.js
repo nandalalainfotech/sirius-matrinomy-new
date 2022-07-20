@@ -687,19 +687,36 @@ db.mongoose
     })
     .then(() => {
 
+        //     console.log(`Successfully connect to MongoDB .`);
+        //     if (!process.env.NODE_ENV) process.env.NODE_ENV = 'dev';
+
+        //     // not need
+        //     // dotenv.config({ path: `${__dirname}/../env/.env.${process.env.NODE_ENV.trim()}` });
+        //     // this.app = express();
+        //     // this.middlewares();
+
+        //     // not need
+
+        //     app.get('/', (req, res) => {
+        //         res.sendFile('index.html', { root: path.resolve(path.dirname('./src/public/dist/sirius')) });
+        //     });
+
+        //     app.get('*', (req, res) => {
+        //         res.sendFile(path.resolve(path.dirname('./src/public/dist/sirius')));
+        //     })
+
+        //     initial();
+        //     app.listen(PORT, () => {
+        //         console.log(`Server is running on port ${PORT}.`);
+        //     });
+        // })
+        // .catch((err) => {
+        //     console.error("Connection error", err);
+        //     process.exit();
+        // });
+
+
         console.log(`Successfully connect to MongoDB .`);
-        if (!process.env.NODE_ENV) process.env.NODE_ENV = 'dev';
-        // dotenv.config({ path: `${__dirname}/../env/.env.${process.env.NODE_ENV.trim()}` });
-        // this.app = express();
-        // this.middlewares();
-        app.get('/', (req, res) => {
-            res.sendFile('index.html', { root: path.resolve(path.dirname('./src/public/dist/sirius')) });
-        });
-
-        app.get('*', (req, res) => {
-            res.sendFile(path.resolve(path.dirname('./src/public/dist/sirius')));
-        })
-
         initial();
         app.listen(PORT, () => {
             console.log(`Server is running on port ${PORT}.`);
@@ -709,6 +726,8 @@ db.mongoose
         console.error("Connection error", err);
         process.exit();
     });
+
+
 
 
 const options = {
@@ -2487,17 +2506,17 @@ app.post('/api/audio001wb/audio', [audio.single("content")], (req, res) => {
     audio001wb.updateduser = req.body.updateduser;
     audio001wb.updateddatetime = req.body.updateddatetime;
     Contentmaster001mb.findOne({ _id: audio001wb.contentid }, (err, user) => {
-                if (user) {
-                    user.audio.push(audio001wb);
-                    user.save();
-                    audio001wb.save();
-                    return res.json({ message: 'Audio created!' });
-                }else {
-                    return res.status(500).json({
-                        message: 'Error when creating audio001wb'
-                    });
-                }
+        if (user) {
+            user.audio.push(audio001wb);
+            user.save();
+            audio001wb.save();
+            return res.json({ message: 'Audio created!' });
+        } else {
+            return res.status(500).json({
+                message: 'Error when creating audio001wb'
             });
+        }
+    });
 })
 
 /**
@@ -2536,7 +2555,7 @@ app.post('/api/audio001wb/audio', [audio.single("content")], (req, res) => {
 app.put('/api/audio001wb/:id', [audio.single("content")], (req, res) => {
     var id = req.params.id;
 
-    Audio001wb.findOne({ _id: id }, function(err, audio001wb) {
+    Audio001wb.findOne({ _id: id }, function (err, audio001wb) {
         if (err) {
             return res.status(500).json({
                 message: 'Error when getting audio001wb',
@@ -2562,7 +2581,7 @@ app.put('/api/audio001wb/:id', [audio.single("content")], (req, res) => {
         audio001wb.updateduser = req.body.updateduser ? req.body.updateduser : audio001wb.updateduser;
         audio001wb.updateddatetime = req.body.updateddatetime ? req.body.updateddatetime : audio001wb.updateddatetime;
 
-        audio001wb.save(function(err, audio001wb) {
+        audio001wb.save(function (err, audio001wb) {
             if (err) {
                 return res.status(500).json({
                     message: 'Error when updating audio001wb.',
