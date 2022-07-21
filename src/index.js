@@ -44,6 +44,47 @@ import videoUpload from "../src/middleware/videoupload.js";
 import audio from "../src/middleware/audio.js";
 
 const app = express();
+
+
+if (!process.env.NODE_ENV) process.env.NODE_ENV = 'dev';
+// // dotenv.config({ path: `${__dirname}/../env/.env.${process.env.NODE_ENV.trim()}` });
+
+
+// app.get('/', (req, res) => {
+//     res.sendFile('index.html', { root: `${__dirname}/public/dist/sirius` });
+// });
+
+// if (!process.env.NODE_ENV) process.env.NODE_ENV = 'dev';
+// // dotenv.config({ path: `${__dirname}/../env/.env.${process.env.NODE_ENV.trim()}` });
+
+// // this.middlewares();
+// app.get('/', (req, res) => {
+//     //   res.sendFile('index.html', { root: `${__dirname}/public/dist/omega` });
+//     res.sendFile(path.resolve(path.dirname('./src/public/dist/sirius')));
+// });
+app.use(express.static("./dist/sirius"));
+app.get("/*", function (req, res) {
+    res.sendFile("index.html", { root: "dist/sirius" });
+});
+// app.use(express.static(path.resolve(path.dirname('./src/public/dist/sirius'))));
+app.use(express.static("./public/dist/sirius"));
+
+app.get("/", function (req, res) {
+    res.sendFile("index.html", { root: "public/dist/sirius" });
+});
+
+app.use(express.json({ limit: '100mb' }));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// not needed
+// app.get('/', (req, res) => {
+//     res.send('Backend welcomes you');
+// });
+
+// needed
+
+
 app.use(cors());
 dotenv.config();
 
@@ -687,45 +728,45 @@ db.mongoose
     })
     .then(() => {
 
-        //     console.log(`Successfully connect to MongoDB .`);
-        //     if (!process.env.NODE_ENV) process.env.NODE_ENV = 'dev';
+            console.log(`Successfully connect to MongoDB .`);
+            if (!process.env.NODE_ENV) process.env.NODE_ENV = 'dev';
 
-        //     // not need
-        //     // dotenv.config({ path: `${__dirname}/../env/.env.${process.env.NODE_ENV.trim()}` });
-        //     // this.app = express();
-        //     // this.middlewares();
+            // not need
+            // dotenv.config({ path: `${__dirname}/../env/.env.${process.env.NODE_ENV.trim()}` });
+            // this.app = express();
+            // this.middlewares();
 
-        //     // not need
+            // not need
 
-        //     app.get('/', (req, res) => {
-        //         res.sendFile('index.html', { root: path.resolve(path.dirname('./src/public/dist/sirius')) });
-        //     });
+            app.get('/', (req, res) => {
+                res.sendFile('index.html', { root: path.resolve(path.dirname('./src/public/dist/sirius')) });
+            });
 
-        //     app.get('*', (req, res) => {
-        //         res.sendFile(path.resolve(path.dirname('./src/public/dist/sirius')));
-        //     })
+            app.get('*', (req, res) => {
+                res.sendFile(path.resolve(path.dirname('./src/public/dist/sirius')));
+            })
 
-        //     initial();
-        //     app.listen(PORT, () => {
-        //         console.log(`Server is running on port ${PORT}.`);
-        //     });
-        // })
-        // .catch((err) => {
-        //     console.error("Connection error", err);
-        //     process.exit();
-        // });
-
-
-        console.log(`Successfully connect to MongoDB .`);
-        initial();
-        app.listen(PORT, () => {
-            console.log(`Server is running on port ${PORT}.`);
+            initial();
+            app.listen(PORT, () => {
+                console.log(`Server is running on port ${PORT}.`);
+            });
+        })
+        .catch((err) => {
+            console.error("Connection error", err);
+            process.exit();
         });
-    })
-    .catch((err) => {
-        console.error("Connection error", err);
-        process.exit();
-    });
+
+
+    //     console.log(`Successfully connect to MongoDB .`);
+    //     initial();
+    //     app.listen(PORT, () => {
+    //         console.log(`Server is running on port ${PORT}.`);
+    //     });
+    // })
+    // .catch((err) => {
+    //     console.error("Connection error", err);
+    //     process.exit();
+    // });
 
 
 
